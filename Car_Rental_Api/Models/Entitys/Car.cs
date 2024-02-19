@@ -1,6 +1,6 @@
 ﻿namespace Car_Rental_Api.Models.Entitys
 {
-    public class Cars
+    public class Car
     {
         public int Id { get; set; }
         public string Name { get; set; }
