@@ -1,4 +1,5 @@
 ﻿using Car_Rental_Api.Models.Entitys;
+using Car_Rental_Api.Models.Entitys.Entity_Config;
 using Microsoft.EntityFrameworkCore;
 
 namespace Car_Rental_Api.Context
@@ -7,6 +8,15 @@ namespace Car_Rental_Api.Context
     {
         public CarRentalDbContext(DbContextOptions options) : base(options)
         {
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new CarEntityTypeConfig());
+            modelBuilder.ApplyConfiguration(new CustomerEntityTypeConfig());
+            modelBuilder.ApplyConfiguration(new EmployeeEntityTypeConfig());
+            modelBuilder.ApplyConfiguration(new InvoiceEntityTypeConfig());
+            modelBuilder.ApplyConfiguration(new RentEntityTypeConfig());
         }
 
         public virtual DbSet<Car> Cars { get; set; }
