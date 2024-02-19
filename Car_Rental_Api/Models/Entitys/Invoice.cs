@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public float TotalPrice { get; set; }
+        public virtual Rent Rent { get; set; }
        
   
     }

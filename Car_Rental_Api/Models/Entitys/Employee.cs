@@ -7,5 +7,7 @@
         public string Phone { get; set; }
         public int Age { get; set; }
 
+        public virtual List<Car> Car { get; set; }
+
     }
 }

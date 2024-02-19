@@ -8,5 +8,7 @@
         public int Age { get; set; }
         public int NatNationalityID { get; set; }
 
+        public virtual List<Rent> Rent { get; set; }
+
     }
 }
